@@ -1,4 +1,18 @@
 -- @block
+-- exercise 7
+SELECT (SELECT COUNT(*) FROM projeto p), (SELECT SUM(DATEDIFF(p.data_fim, p.data_inicio)) FROM projeto p), id_departamento, nome, (
+  SELECT COUNT(*) 
+  FROM projeto 
+  WHERE projeto.id_departamento = departamento.id_departamento
+  AND DATEDIFF(data_fim, data_inicio) > (
+    (SELECT SUM(DATEDIFF(p.data_fim, p.data_inicio)) FROM projeto p)
+    /
+    (SELECT COUNT(*) FROM projeto p)
+  )
+) 
+FROM departamento
+
+-- @block
 -- exercise 6
 SELECT id_departamento, nome, (
   SELECT COUNT(*) 
