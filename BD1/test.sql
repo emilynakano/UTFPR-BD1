@@ -1,4 +1,28 @@
 -- @block
+-- exercise 6
+SELECT id_departamento, nome, (
+  SELECT COUNT(*) 
+  FROM projeto 
+  WHERE projeto.id_departamento = departamento.id_departamento
+) 
+FROM departamento 
+WHERE EXISTS (
+  SELECT * FROM projeto
+  WHERE projeto.id_departamento = departamento.id_departamento 
+  AND EXTRACT(YEAR FROM projeto.data_inicio) >= 2015
+  AND (
+    (SELECT SUM(salario) 
+    FROM empregado
+    WHERE empregado.id_departamento = departamento.id_departamento
+    ) 
+  / 
+    (SELECT COUNT(*) 
+    FROM empregado
+    WHERE empregado.id_departamento = departamento.id_departamento
+    )) > 500
+)
+
+-- @block
 -- exercise 5
 SELECT id_departamento, nome, (
     SELECT COUNT(*) 
