@@ -1,4 +1,22 @@
 -- @block
+-- exercise 5
+SELECT id_departamento, nome, (
+    SELECT COUNT(*) 
+    FROM empregado 
+    WHERE empregado.id_departamento = departamento.id_departamento
+  ) AS quantidade_empregados
+FROM departamento
+WHERE NOT EXISTS (
+    SELECT * FROM empregado 
+    WHERE empregado.id_departamento = departamento.id_departamento AND empregado.sexo = 'M'
+  ) AND ((
+    SELECT SUM(salario) FROM empregado 
+    WHERE empregado.id_departamento = departamento.id_departamento
+  ) / (
+    SELECT COUNT(*) FROM empregado 
+    WHERE empregado.id_departamento = departamento.id_departamento
+  )) > 500
+-- @block
 -- exercise 4
 SELECT id_departamento, nome, (
     SELECT COUNT(*) 
