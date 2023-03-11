@@ -1,7 +1,17 @@
+-- @block
+-- exercise 2
+SELECT empregado.id_empregado, empregado.sobrenome 
+FROM empregado
+WHERE NOT EXISTS (
+    SELECT id_empregado 
+    FROM empregado_projeto 
+    WHERE empregado_projeto.id_empregado = empregado.id_empregado
+  )
 
 -- @block
 -- exercise 1
-SELECT departamento.nome, empregado.id_empregado, empregado.sobrenome, empregado.salario  FROM empregado 
+SELECT departamento.nome, empregado.id_empregado, empregado.sobrenome, empregado.salario  
+FROM empregado 
 JOIN departamento 
 ON departamento.id_departamento = empregado.id_departamento
 WHERE empregado.salario >= ((SELECT SUM(CASE WHEN empregado.salario > 5000 THEN empregado.salario ELSE 0 END) FROM empregado) / (SELECT SUM(CASE WHEN salario > 5000 THEN 1 ELSE 0 END) FROM empregado))
