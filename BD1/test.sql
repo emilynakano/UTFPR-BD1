@@ -1,4 +1,17 @@
 -- @block
+-- exercise 4
+SELECT id_departamento, nome, (
+    SELECT COUNT(*) 
+    FROM empregado 
+    WHERE empregado.id_departamento = departamento.id_departamento
+  ) 
+FROM departamento
+WHERE NOT EXISTS (
+    SELECT * FROM empregado 
+    WHERE empregado.id_departamento = departamento.id_departamento AND empregado.sexo = 'M'
+  )
+
+-- @block
 -- exercise 3
 SELECT id_projeto, descricao, (
     SELECT MIN(DATEDIFF(data_fim, data_inicio))
