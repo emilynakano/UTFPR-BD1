@@ -1,4 +1,14 @@
 -- @block
+-- exercise 3
+SELECT id_projeto, descricao, (
+    SELECT MIN(DATEDIFF(data_fim, data_inicio))
+    FROM projeto
+  ) AS data_diff FROM projeto
+WHERE DATEDIFF(data_fim, data_inicio) = (
+    SELECT MIN(DATEDIFF(data_fim, data_inicio))
+    FROM projeto
+  )
+-- @block
 -- exercise 2
 SELECT empregado.id_empregado, empregado.sobrenome 
 FROM empregado
