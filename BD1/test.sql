@@ -70,16 +70,13 @@ HAVING COUNT(CASE WHEN e.sexo <> 'F' THEN 1 ELSE NULL END) = 0 AND AVG(e.salario
 
 -- @block
 -- exercise 4
-SELECT id_departamento, nome, (
-    SELECT COUNT(*) 
-    FROM empregado 
-    WHERE empregado.id_departamento = departamento.id_departamento
-  ) 
-FROM departamento
-WHERE NOT EXISTS (
-    SELECT * FROM empregado 
-    WHERE empregado.id_departamento = departamento.id_departamento AND empregado.sexo = 'M'
-  )
+SELECT d.id_departamento, d.nome, JSON_OBJECT(
+  'empregadas', JSON_ARRAYAGG(JSON_OBJECT('nome', CONCAT(primeiro_nome, " ", sobrenome)))
+)
+FROM departamento d
+JOIN empregado e ON e.id_departamento = d.id_departamento
+GROUP BY d.id_departamento
+HAVING SUM(CASE WHEN e.sexo <> "F" THEN 1 ELSE 0 END) = 0
 
 -- @block
 -- exercise 3
