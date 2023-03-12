@@ -19,11 +19,11 @@ FROM departamento */
 
 -- @block
 -- exercise 6
-SELECT d.id_departamento, d.nome, COUNT(p.id_projeto) AS quantidade_projetos
+SELECT d.id_departamento, d.nome, COUNT(DISTINCT p.id_projeto) AS quantidade_projetos
 FROM departamento d
 JOIN projeto p ON p.id_departamento = d.id_departamento
 JOIN empregado e ON e.id_departamento = d.id_departamento
-GROUP BY d.id_departamento
+GROUP BY d.id_departamento, d.nome
 HAVING SUM(CASE WHEN EXTRACT(YEAR FROM p.data_inicio) = '2015' THEN 1 ELSE NULL END) >= 1
 AND AVG(e.salario) > 500 
 /* SELECT id_departamento, nome, (
@@ -35,7 +35,7 @@ FROM departamento
 WHERE EXISTS (
   SELECT * FROM projeto
   WHERE projeto.id_departamento = departamento.id_departamento 
-  AND EXTRACT(YEAR FROM projeto.data_inicio) >= 2015
+  AND EXTRACT(YEAR FROM projeto.data_inicio) = 2015
   AND (
     (SELECT SUM(salario) 
     FROM empregado
