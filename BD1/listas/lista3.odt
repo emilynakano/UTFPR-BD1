@@ -1,0 +1,40 @@
+Professor: Paulo Henrique Soares
+Lista 3 – Exercícios de SQL – Data e Hora
+1. Para os empregados cuja soma do salário com o bônus, acrescido de
+5%, for menor ou igual a R$ 20.000, liste o seguinte: Primeiro nome
+concatenado com sobrenome, nome do departamento, descrição do
+nível de escolaridade, rendimento total (salario+bonus) e rendimento
+total acrescido de 5%. Classificar os resultados por sobrenome.
+2. Todos os funcionários com o id_nivel_escolaridade variando entre 2 e
+7 irão receber um aumento em seu salário de R$1200, mas o seu
+bônus será reduzido pela metade. Para estes funcionários, liste:
+sobrenome, nome do departamento, descrição do nível de
+escolaridade, novo salário e novo bônus. Ordene o resultado por
+sobrenome.
+3. Mostre um relatório que reduza o salário em R$ 100 de todos os
+funcionários correspondentes a seguintes critérios: Pertença ao
+departamento ‘Testes’ ou que tenham 80% do salário superior ou
+igual R$ 5000 ou com o salário acrescido de 120% seja inferior ou
+igual a R$ 3000. Liste o sobrenome, nome do departamento, salário e
+o salário reduzido.
+4. Liste o id_departamento, nome do departamento, nome do
+departamento de gerencia e nome do gerente de todos os
+departamentos. Caso o nome do departamento de gerencia esteja
+vazio, substitua pela palavra “Desconhecido”.
+5. Liste todos os empregados que tinham menos de 25 anos quando
+foram contratados pela empresa. Liste o número do funcionário,
+sobrenome e idade que possuíam quando eles foram contratados.
+Ordene o resultado por idade.
+6. Fornecer uma lista de todos os projetos que foram concluídos depois
+de 01 de Janeiro de 2015. Mostre a descrição do projeto, mês e o ano
+da data de início do projeto, sobrenome do gerente do projeto.
+Classificar o resultado por número de projeto.
+7. Listar o número, a descrição e a duração, em semanas, de todos os
+projetos que foram iniciados a partir de 2014. A duração deve ser
+arredondada e apresentada com uma casa decimal. Ordenar a lista
+pelo número do projeto.
+8. Para os projetos que iniciaram entre os anos de 2013 e 2016, liste o
+número do projeto, a data de início e de término do projeto, a data
+final real do projeto em forma de um campo calculado, chamado
+DATA_FINAL_REAL, cuja data será acrescida de 10% da data final.
+Ordene o resultado por número de projeto.

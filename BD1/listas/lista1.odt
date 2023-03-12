@@ -1,0 +1,42 @@
+ 1. Utilizando a linguagem SQL, Implemente o modelo de banco de dados mostrado
+no diagrama abaixo:
+2. Liste o identificador do empregado, o sobrenome, a data de nascimento e o
+salário para todos os empregados que ganham mais de R$1000 por ano. Ordene
+o resultado por salário em ordem decrescente.
+3. Liste o sobrenome, o primeiro nome e o identificador do departamento de todos
+os empregados que nasceram no ano de 1994, e possuem salário maior do que
+R$500. A listagem deve ser ordenada pelo identificador do departamento (de
+forma decrescente) e pelo salário (forma ascendente).
+4. Liste todos os níveis de escolaridade (campo id_nivel_escolaridade) que
+possuem pelo menos um funcionário. O resultado deve ser em ordem
+descendente, e apenas uma ocorrência de cada nível deve ser exibida (níveis
+duplicados devem ser excluídos do resultado final).
+5. Liste o sobrenome, salário e o bônus para todos os empregados que são do sexo
+masculino e possuem salário maior do que R$500 ou bônus maior do que
+R$200.
+6. Liste o sobrenome e o salário para todos os empregados que nasceram depois de
+1985, e possuem salário maior do que R$1.000 e bônus menor que R$500.
+7. Liste o sobrenome, salário e bônus para todos os empregados que possuem
+salário maior do que R$1.000 e um bônus maior do que R$100, ou que possuem
+um id_nivel_escolaridade maior do que 4 e salário superior a R$2000. A lista
+deve ser ordenada por sobrenome.
+8. Liste o sobrenome, salário e bônus para todos os empregados com salário maior
+que R$1000, um bônus variando entre R$400 e R$500, e nível de educação
+maior do que 5. A lista deve ser ordenada por sobrenome.
+9. Liste todos os empregados que possuem o sobrenome começando com a letra
+“G”, salário entre R$1000 e R$4000 e seja do sexo masculino ou possua bônus
+maior do que R$200. Ordene por sobrenome.
+10. Liste todos os departamentos que não possuem um departamento que gerencia
+suas atividades (não possui valor no campo id_departamento_gerencia).
+11. Liste todos os departamentos cujo o nome começa com a letra “D” e termina
+com a letra “S”, e também possui um gerente vinculado (id_gerente com valor)
+12. Liste o campo id_departamento de todos os departamentos que tenham a palavra
+“sistema” como parte da descrição de algum projeto a que esteja vinculado.
+13. Liste o sobrenome, salário e bônus de dois empregados (apenas dois
+empregados) que ganham menos de 5000 e possuem bônus (de qualquer valor).
+14. Liste o sobrenome, salário e bônus para os empregados que possuem seu salário
+entre R$500 e R$2000. A consulta deve estar ordenada por sobrenome, e deve
+mostrar apenas o terceiro e quarto empregado.
+
+
+ 

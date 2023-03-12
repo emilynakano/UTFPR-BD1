@@ -1,0 +1,22 @@
+Professor: Paulo Henrique Soares
+Lista 4 – Exercícios de SQL – Agregação e Agrupamento
+1. Para todos os departamentos, apresentar o nome do departamento e
+a soma do salário de todos os funcionários de cada departamento.
+2. Para todos os departamentos, apresentar o nome do departamento e
+o número de funcionários alocados no departamento. Ordene o
+resultado por nome de departamento.
+3. Mostrar o nome e o número de empregados dos departamentos cujo
+o nome começa com a letra “D” e possuem três ou mais empregados.
+4. Para todos os departamentos com pelo menos um funcionário com
+nível de escolaridade igual a “Superior”, exibir o nome do
+departamento e quantos funcionários possuem nível superior no
+departamento.
+5. Mostrar o salário médio dos homens e o salário médio das mulheres
+para cada departamento. Apresentar o nome do departamento, o
+sexo, e a média da renda (soma do salário mais o bônus). Incluir
+apenas os grupos que possuem duas ou mais pessoas. Mostrar
+apenas duas casas decimais nas médias.
+6. Apresentar a média do salário e a média do bônus para todos os
+departamentos que tenham uma média de bônus com valor superior
+a R$ 100,00 e uma média de salário com valor superior a 1000.
+Mostrar todas as médias com duas casas decimais.

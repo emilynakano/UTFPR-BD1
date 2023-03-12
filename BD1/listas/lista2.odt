@@ -1,0 +1,49 @@
+Professor: Paulo Henrique Soares
+Lista 2 – Exercícios de SQL – Seleção de Múltiplas Tabelas
+1. Desenvolva um relatório que liste o primeiro nome, o sobrenome e o
+nome do departamento de todos os funcionários. O relatório deve
+estar ordenado por nome, sobrenome e departamento.
+2. Liste o nome de cada departamento, além do primeiro nome e do
+sobrenome de seus respectivos gerentes. Ordene a listagem por
+nome do departamento.
+3. Para todos os projetos que possuem seu identificador terminando
+com "4", liste o número do projeto, o nome do projeto e o nome de
+todas as suas atividades. Ordene a consulta por número do projeto e
+liste cada atividade do projeto apenas uma vez. (Lembre-se, pode ser
+que mais de um funcionário seja responsável pela mesma atividade
+no projeto e a atividade deve ser listada apenas uma vez).
+4. Quais empregados participam do projeto número 4? Liste o número
+do funcionário, sobrenome, o identificador do projeto e o nome do
+projeto. Ordene a lista por número do funcionário e depois por
+número de projeto. Liste apenas uma ocorrência dos resultados que
+forem duplicados (Lembre-se, o mesmo funcionário pode executar
+mais de uma atividade no mesmo projeto).
+5. Quais atividades começaram em 6 de Março de 2013? Para cada uma
+dessas atividades, listar o número e o sobrenome do empregado que
+está executando a atividade, o número do projeto, o nome do projeto,
+o número da atividade e a data de término da atividade. Ordenar a
+lista pelo número do projeto e, em seguida, pelo número do
+empregado e depois pelo número da atividade.
+6. Exibir o número do departamento, sobrenome, nome do projeto e o
+número das atividades realizadas pelos empregados no
+departamento 5. Os resultados devem ser ordenados pelo nome do
+projeto e, em seguida, pelo número da atividade.
+7. Liste o número de departamento, sobrenome, o nome do projeto e o
+número da atividade para os funcionários cujo departamento de
+trabalho está entre 002 e 005. Classificar a lista por número do
+departamento, sobrenome e número de atividade.
+8. A diretoria precisa de uma lista de atividades que foram iniciadas a
+partir de 01 de Janeiro de 2013. Para essas atividades, mostre o
+número da atividade, o nome do gerente do departamento atribuído
+ao projeto, data de início da atividade, o número do projeto e o
+sobrenome do funcionário que irá executar a atividade. A lista deve
+ser ordenada pelo número da atividade e, em seguida, pela data de
+início de atividade.
+9. Quais funcionários do departamento 005 foram contratados antes de
+seu gerente? Listar o número do departamento, sobrenome do
+gerente, o sobrenome do funcionário e as datas de contratação do
+gerente e do empregado. Ordene a lista por sobrenome do
+funcionário.
+10.Liste o identificador e o nome de todos os departamentos. Caso o
+departamento possua um gerente, liste o seu primeiro nome e seu
+sobrenome. Ordene a listagem por nome do departamento.

@@ -1,0 +1,29 @@
+Professor: Paulo Henrique Soares
+Lista 5 – Exercícios de SQL – Subquerys
+1. Liste todos os empregados que possuem um salário que é maior ou
+igual a média salarial de todos os empregados que possuem salário
+maior que R$ 5000,00. Mostrar nome do departamento, o número do
+funcionário, sobrenome e salário. Ordenar a lista pelo número do
+departamento e pelo número do funcionário.
+2. Listar o número do funcionário e o sobrenome de todos os
+funcionários não atribuídos a nenhum projeto. Isto significa que a
+tabela “EmpregadoPprojeto” não contém nenhuma uma linha com o
+identificador do funcionário.
+3. Liste o número, nome e duração (em dias) do projeto com o menor
+tempo de duração.
+4. Liste o número do departamento, nome do departamento, nome e
+sobrenome dos empregados de todos os departamentos que só
+possuem funcionários do sexo feminino.
+5. Liste o número do departamento, nome do departamento e a
+quantidade de funcionários de todos os departamentos que só
+possuem mulheres. O salário médio destas funcionárias devem ser
+superiores a 500 reais.
+6. Liste os departamentos (id_departamento, nome e quantidade de
+projetos) que possuem um ou mais projetos iniciados no ano de 2015,
+além de possuir média salarial de seus empregados acima de 500
+reais.
+7. Liste a quantidade de projetos de cada departamento que possuem o
+tempo de duração superior a média dos tempos de duração de todos
+os projetos (de todos os departamentos). Mostre o número e o nome
+dos departamentos, bem como a quantidade de projetos que
+atendem os requisitos.

@@ -1,1 +1,0 @@
-ER_MIX_OF_GROUP_FUNC_AND_FIELDS: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'soares.departamento.id_departamento'; this is incompatible with sql_mode=only_full_group_by
