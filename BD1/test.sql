@@ -79,13 +79,9 @@ WHERE DATEDIFF(data_fim, data_inicio) = (
   )
 -- @block
 -- exercise 2
-SELECT empregado.id_empregado, empregado.sobrenome 
+SELECT id_empregado, sobrenome 
 FROM empregado
-WHERE NOT EXISTS (
-    SELECT id_empregado 
-    FROM empregado_projeto 
-    WHERE empregado_projeto.id_empregado = empregado.id_empregado
-  )
+WHERE id_empregado NOT IN (SELECT id_empregado FROM empregado_projeto)
 
 -- @block
 -- exercise 1
