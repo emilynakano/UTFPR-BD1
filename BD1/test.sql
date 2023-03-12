@@ -69,14 +69,14 @@ WHERE NOT EXISTS (
 
 -- @block
 -- exercise 3
-SELECT id_projeto, descricao, (
-    SELECT MIN(DATEDIFF(data_fim, data_inicio))
-    FROM projeto
-  ) AS data_diff FROM projeto
+/* SELECT id_projeto, descricao, DATEDIFF(data_fim, data_inicio) AS data_duracao FROM projeto
 WHERE DATEDIFF(data_fim, data_inicio) = (
     SELECT MIN(DATEDIFF(data_fim, data_inicio))
     FROM projeto
-  )
+  ) */
+SELECT id_projeto, descricao, DATEDIFF(data_fim, data_inicio) AS data_duracao FROM projeto
+ORDER BY data_duracao ASC
+LIMIT 1
 -- @block
 -- exercise 2
 SELECT id_empregado, sobrenome 
