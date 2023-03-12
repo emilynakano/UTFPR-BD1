@@ -1,8 +1,11 @@
--- @block
-SELECT * FROM empregado
+
 -- @block
 -- exercise 7
-SELECT (SELECT COUNT(*) FROM projeto p), (SELECT SUM(DATEDIFF(p.data_fim, p.data_inicio)) FROM projeto p), id_departamento, nome, (
+SELECT d.id_departamento, d.nome, COUNT(CASE WHEN DATEDIFF(p.data_fim, p.data_inicio) > (SELECT AVG(DATEDIFF(p2.data_fim, p2.data_inicio)) FROM projeto p2) THEN 1 ELSE NULL END) AS quantidade_projetos
+FROM departamento d
+JOIN projeto p ON p.id_departamento = d.id_departamento
+GROUP BY d.id_departamento
+/* SELECT (SELECT COUNT(*) FROM projeto p), (SELECT SUM(DATEDIFF(p.data_fim, p.data_inicio)) FROM projeto p), id_departamento, nome, (
   SELECT COUNT(*) 
   FROM projeto 
   WHERE projeto.id_departamento = departamento.id_departamento
@@ -12,7 +15,7 @@ SELECT (SELECT COUNT(*) FROM projeto p), (SELECT SUM(DATEDIFF(p.data_fim, p.data
     (SELECT COUNT(*) FROM projeto p)
   )
 ) 
-FROM departamento
+FROM departamento */
 
 -- @block
 -- exercise 6
