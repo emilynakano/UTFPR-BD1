@@ -55,7 +55,7 @@ FROM departamento d
 JOIN empregado e
 ON d.id_departamento = e.id_departamento
 GROUP BY e.id_departamento
-HAVING COUNT(CASE WHEN e.sexo <> 'F' THEN 1 ELSE NULL END) = 0
+HAVING COUNT(CASE WHEN e.sexo <> 'F' THEN 1 ELSE NULL END) = 0 AND AVG(e.salario) > 500
 
 
 -- @block
