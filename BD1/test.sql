@@ -1,4 +1,6 @@
 -- @block
+SELECT * FROM empregado
+-- @block
 -- exercise 7
 SELECT (SELECT COUNT(*) FROM projeto p), (SELECT SUM(DATEDIFF(p.data_fim, p.data_inicio)) FROM projeto p), id_departamento, nome, (
   SELECT COUNT(*) 
@@ -38,7 +40,7 @@ WHERE EXISTS (
 
 -- @block
 -- exercise 5
-SELECT id_departamento, nome, (
+/* SELECT id_departamento, nome, (
     SELECT COUNT(*) 
     FROM empregado 
     WHERE empregado.id_departamento = departamento.id_departamento
@@ -47,13 +49,15 @@ FROM departamento
 WHERE NOT EXISTS (
     SELECT * FROM empregado 
     WHERE empregado.id_departamento = departamento.id_departamento AND empregado.sexo = 'M'
-  ) AND ((
-    SELECT SUM(salario) FROM empregado 
-    WHERE empregado.id_departamento = departamento.id_departamento
-  ) / (
-    SELECT COUNT(*) FROM empregado 
-    WHERE empregado.id_departamento = departamento.id_departamento
-  )) > 500
+  ) AND (SELECT AVG(salario) FROM empregado WHERE empregado.id_departamento = departamento.id_departamento) > 500 */
+SELECT d.id_departamento, d.nome, COUNT(e.id_empregado) AS quantidade_empregados
+FROM departamento d
+JOIN empregado e
+ON d.id_departamento = e.id_departamento
+GROUP BY e.id_departamento
+HAVING COUNT(CASE WHEN e.sexo <> 'F' THEN 1 ELSE NULL END) = 0
+
+
 -- @block
 -- exercise 4
 SELECT id_departamento, nome, (
@@ -91,6 +95,8 @@ JOIN departamento
 ON departamento.id_departamento = empregado.id_departamento
 WHERE empregado.salario >= (SELECT AVG(e.salario) FROM empregado e WHERE e.salario > 5000)
 ORDER BY empregado.id_departamento, empregado.id_empregado
+
+
 
 
 
